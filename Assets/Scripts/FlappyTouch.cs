@@ -5,6 +5,7 @@ public class FlappyTouch : MonoBehaviour
 
     [SerializeField] private float forceAmount = 5f;
     [SerializeField] private float constantRightSpeed = 3f;
+    [SerializeField] private HapticFeedback haptic;
 
     private Rigidbody2D rb;
     private void Awake()
@@ -35,6 +36,7 @@ public class FlappyTouch : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             AddForceUpwards();
+            haptic.TriggerVibration();
         }
     }
 
